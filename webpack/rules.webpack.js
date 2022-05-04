@@ -1,5 +1,21 @@
 module.exports = [
   {
+    test: /\.(less|css)$/,
+    use: [
+      'style-loader',
+      'css-loader',
+      {
+        loader: 'less-loader',
+        options: {
+          lessOptions: {
+            javascriptEnabled: true,
+            modifyVars: { '@primary-color': '#1DA57A' },
+          }
+        }
+      }
+    ],
+  },
+  {
     test: /\.node$/,
     use: 'node-loader',
   },
@@ -17,7 +33,17 @@ module.exports = [
     test: /\.(js|ts|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: 'babel-loader'
+      loader: 'babel-loader',
+      options: {
+        "plugins": [
+          [
+            "import", {
+              "libraryName": "antd",
+              "style": true
+            }
+          ]
+        ]
+      }
     }
   },
   {

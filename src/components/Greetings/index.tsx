@@ -1,4 +1,4 @@
-import { Button } from '../Button'
+import { Button } from 'antd'
 import { Container, Image, Text } from './styles'
 
 export function Greetings() {
@@ -10,13 +10,9 @@ export function Greetings() {
 
   return (
     <Container>
-      <Image
-        src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"
-        alt="ReactJS logo"
-      />
       <Text>An Electron boilerplate including TypeScript, React, Jest and ESLint.</Text>
-      <Button onClick={handleSayHello}>Send message to main process</Button>
+      <Button type='primary' onClick={handleSayHello}>测试组件</Button>
     </Container>
   )
 }
- 
+
