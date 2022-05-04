@@ -1,6 +1,6 @@
 import { Button } from 'antd'
 import { useEffect, useState } from 'react'
-import { Container, Image, Text } from './styles'
+import { Container, Text } from './styles'
 
 export function Greetings() {
   const [count, setCount] = useState('0')
