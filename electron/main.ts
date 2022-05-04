@@ -35,7 +35,14 @@ async function registerListeners () {
    * This comes from bridge integration, check bridge.ts
    */
   ipcMain.on('message', (_, message) => {
-    console.log(message)
+    console.log(message, '接收到渲染进程的消息')
+    mainWindow?.webContents.send('system', '来自主进程的消息')
+    // 打开文件弹窗
+    // dialog.showOpenDialog({
+    //   defaultPath: path.join(__dirname, '/../../../../template')
+    // }).then(result => {
+    //   console.log(result);        //输出结果
+    // })
   })
 }
 
